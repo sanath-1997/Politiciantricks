@@ -16,13 +16,13 @@ export default function Home() {
           <header className="space-y-4">
             <Dialog>
               <DialogTrigger asChild>
-                <h1 className="text-4xl sm:text-5xl md:text-6xl font-headline font-bold text-black cursor-pointer hover:scale-105 transition-transform duration-300">
+                <h1 className="text-4xl sm:text-5xl md:text-6xl font-headline font-bold text-accent cursor-pointer hover:scale-105 transition-transform duration-300">
                   How to fool common people? - Political Edition
                 </h1>
               </DialogTrigger>
               <DialogContent className="sm:max-w-xl bg-card">
                 <DialogHeader>
-                  <DialogTitle className="text-2xl sm:text-3xl font-headline text-black">
+                  <DialogTitle className="text-2xl sm:text-3xl font-headline text-accent">
                     How to fool common people? - Political Edition
                   </DialogTitle>
                 </DialogHeader>
@@ -32,7 +32,7 @@ export default function Home() {
               <span role="img" aria-label="theater masks" className="text-2xl">
                 🎭
               </span>
-              <p className="text-lg sm:text-xl md:text-2xl text-muted-foreground font-body">
+              <p className="text-lg sm:text-xl md:text-2xl text-accent font-body">
                 PolitiTricks Exposed
               </p>
             </div>
@@ -179,7 +179,7 @@ const FooterLink = ({
 }) => (
   <Dialog>
     <DialogTrigger asChild>
-      <button className="text-sm text-foreground/90 hover:text-primary hover:underline focus:outline-none">
+      <button className="text-sm text-white hover:text-primary hover:underline focus:outline-none">
         {title}
       </button>
     </DialogTrigger>
