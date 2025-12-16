@@ -40,7 +40,7 @@ export default function Home() {
 
           <section className="bg-card/90 p-6 sm:p-8 rounded-lg shadow-lg border-border/50 max-w-2xl mx-auto text-left space-y-4">
             <h2 className="text-2xl sm:text-3xl font-headline font-semibold text-primary">
-              What this ebook is about
+              What this ebook is about ?
             </h2>
             <p className="font-body text-base sm:text-lg leading-relaxed">
               This book is simply about all the nonsense politicians do to grab
