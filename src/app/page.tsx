@@ -16,13 +16,13 @@ export default function Home() {
           <header className="space-y-4">
             <Dialog>
               <DialogTrigger asChild>
-                <h1 className="text-4xl sm:text-5xl md:text-6xl font-headline font-bold text-primary cursor-pointer hover:scale-105 transition-transform duration-300">
+                <h1 className="text-4xl sm:text-5xl md:text-6xl font-headline font-bold text-black cursor-pointer hover:scale-105 transition-transform duration-300">
                   How to fool common people? - Political Edition
                 </h1>
               </DialogTrigger>
               <DialogContent className="sm:max-w-xl bg-card">
                 <DialogHeader>
-                  <DialogTitle className="text-2xl sm:text-3xl font-headline text-primary">
+                  <DialogTitle className="text-2xl sm:text-3xl font-headline text-black">
                     How to fool common people? - Political Edition
                   </DialogTitle>
                 </DialogHeader>
