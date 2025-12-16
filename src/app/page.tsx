@@ -2,26 +2,16 @@ import { PaymentModal } from "@/components/payment-modal";
 import {
   Dialog,
   DialogContent,
-  DialogDescription,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="relative min-h-screen w-full">
-      <Image
-        src="https://images.pexels.com/photos/25482782/pexels-photo-25482782.jpeg"
-        alt="Political background"
-        fill
-        className="object-cover"
-        data-ai-hint="political speech"
-      />
-      <div className="absolute inset-0 bg-background/50 backdrop-blur-sm" />
-      <main className="relative z-10 flex min-h-screen flex-col items-center justify-center p-4 sm:p-8 md:p-12">
+    <div className="min-h-screen w-full bg-background">
+      <main className="flex min-h-screen flex-col items-center justify-center p-4 sm:p-8 md:p-12">
         <div className="w-full max-w-4xl mx-auto text-center space-y-8">
           <header className="space-y-4">
             <Dialog>
@@ -69,7 +59,7 @@ export default function Home() {
           </section>
         </div>
 
-        <footer className="w-full text-center mt-12 text-card-foreground">
+        <footer className="w-full text-center mt-12 text-foreground">
           <div className="max-w-4xl mx-auto flex flex-wrap justify-center items-center gap-x-4 sm:gap-x-6 gap-y-2">
             <FooterLink title="About the Author">
               <p>
@@ -171,7 +161,7 @@ export default function Home() {
               </p>
             </FooterLink>
           </div>
-          <p className="text-sm mt-6 text-card-foreground/80">
+          <p className="text-sm mt-6 text-foreground/80">
             © {new Date().getFullYear()} PolitiTricks Exposed. All Rights Reserved.
           </p>
         </footer>
@@ -189,7 +179,7 @@ const FooterLink = ({
 }) => (
   <Dialog>
     <DialogTrigger asChild>
-      <button className="text-sm text-card-foreground/90 hover:text-primary hover:underline focus:outline-none">
+      <button className="text-sm text-foreground/90 hover:text-primary hover:underline focus:outline-none">
         {title}
       </button>
     </DialogTrigger>

@@ -38,10 +38,8 @@ export function PaymentModal() {
         });
       } catch (error) {
         console.error("Sharing failed:", error);
-        // User may have cancelled the share, so we don't show an error.
       }
     } else {
-      // Fallback for desktop
       try {
         await navigator.clipboard.writeText(window.location.href);
         setPrice(13);
@@ -50,7 +48,7 @@ export function PaymentModal() {
           description: "Price dropped to ₹13. Now share the link!",
         });
       } catch (err) {
-        console.error("Failed to copy: ", err);
+        console.error("Failed to copy:", err);
         toast({
           variant: "destructive",
           title: "Oops!",
@@ -62,7 +60,6 @@ export function PaymentModal() {
 
   const handlePayment = () => {
     setIsPaying(true);
-    // Simulate Razorpay payment process
     setTimeout(() => {
       window.location.href =
         "https://drive.google.com/file/d/17yAepMItiG1JChoYNIvtMEejXEPA3IoB/view?usp=sharing";
@@ -70,31 +67,62 @@ export function PaymentModal() {
   };
 
   return (
-    <Dialog onOpenChange={() => {
-        // Reset price if modal is closed without payment
+    <Dialog
+      onOpenChange={() => {
         if (!isPaying) {
-            setPrice(99);
+          setPrice(99);
         }
-    }}>
+      }}
+    >
       <DialogTrigger asChild>
         <Button
           size="lg"
-          className="w-full text-lg font-bold bg-accent hover:bg-accent/90 text-accent-foreground shadow-lg transform hover:scale-105 transition-transform duration-300"
+          className="
+            w-full
+            text-lg
+            font-bold
+            bg-accent
+            hover:bg-accent/90
+            text-accent-foreground
+            shadow-lg
+            transform
+            hover:scale-105
+            transition-transform
+            duration-300
+          "
         >
-          <BookOpen className="mr-2" /> Get The Ebook Now
+          <BookOpen className="mr-2" />
+          Get The Ebook Now
         </Button>
       </DialogTrigger>
-      <DialogContent className="sm:max-w-[480px] bg-card border-primary/50 shadow-2xl grid-rows-[auto,minmax(0,1fr),auto] p-0 max-h-[90vh]">
+
+      <DialogContent
+        className="
+          w-[calc(100vw-2rem)]
+          max-w-full
+          sm:max-w-[480px]
+          bg-card
+          border-primary/50
+          shadow-2xl
+          grid
+          grid-cols-1
+          grid-rows-[auto,minmax(0,1fr),auto]
+          p-0
+          max-h-[90vh]
+          overflow-x-hidden
+        "
+      >
         <DialogHeader className="p-4 sm:p-6">
           <DialogTitle className="text-2xl sm:text-3xl font-headline text-primary text-center">
             Your Political Satire Fix
           </DialogTitle>
           <DialogDescription className="text-center text-md sm:text-lg pt-2">
-            Secure your copy of "PolitiTricks Exposed".
+            Secure your copy of &quot;PolitiTricks Exposed&quot;.
           </DialogDescription>
         </DialogHeader>
+
         <ScrollArea className="px-4 sm:px-6">
-          <div className="py-8 text-center">
+          <div className="py-8 text-center overflow-hidden">
             <AnimatedPrice price={price} />
           </div>
 
@@ -103,13 +131,36 @@ export function PaymentModal() {
               <p className="font-semibold text-secondary-foreground">
                 Want a massive discount?
               </p>
+
+              {/* ✅ FIXED MOBILE-SAFE BUTTON */}
               <Button
                 variant="outline"
                 onClick={handleShare}
-                className="w-full border-accent text-accent hover:bg-accent hover:text-accent-foreground text-base font-semibold"
+                className="
+                  w-full
+                  max-w-full
+                  px-3
+                  sm:px-4
+                  text-sm
+                  sm:text-base
+                  leading-snug
+                  whitespace-normal
+                  break-words
+                  flex
+                  items-center
+                  justify-center
+                  gap-2
+                  text-center
+                  border-accent
+                  text-accent
+                  hover:bg-accent
+                  hover:text-accent-foreground
+                "
               >
-                <Share2 className="mr-2" /> Share with 1 person to unlock ₹13
-                price
+                <Share2 className="shrink-0" />
+                <span>
+                  Share with 1 person to unlock ₹13 price
+                </span>
               </Button>
             </div>
           )}
@@ -118,18 +169,28 @@ export function PaymentModal() {
         <DialogFooter className="p-4 sm:p-6 pt-0">
           <Button
             size="lg"
-            className="w-full bg-primary hover:bg-primary/90 text-xl"
             onClick={handlePayment}
             disabled={isPaying}
+            className="
+              w-full
+              bg-primary
+              hover:bg-primary/90
+              text-xl
+              flex
+              items-center
+              justify-center
+              gap-2
+            "
           >
             {isPaying ? (
               <>
-                <Loader2 className="mr-2 h-5 w-5 animate-spin" />
+                <Loader2 className="h-5 w-5 animate-spin" />
                 Processing Payment...
               </>
             ) : (
               <>
-                Pay ₹{price} and Get Access <ArrowRight className="ml-2" />
+                Pay ₹{price} and Get Access
+                <ArrowRight />
               </>
             )}
           </Button>
