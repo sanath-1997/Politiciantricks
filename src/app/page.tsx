@@ -179,7 +179,7 @@ const FooterLink = ({
 }) => (
   <Dialog>
     <DialogTrigger asChild>
-      <button className="text-sm text-white hover:text-primary hover:underline focus:outline-none">
+      <button className="text-sm text-foreground hover:text-primary hover:underline focus:outline-none">
         {title}
       </button>
     </DialogTrigger>
