@@ -16,6 +16,12 @@ import { AnimatedPrice } from "./animated-price";
 import { useToast } from "@/hooks/use-toast";
 import { ScrollArea } from "./ui/scroll-area";
 
+declare global {
+  interface Window {
+    Razorpay: any;
+  }
+}
+
 export function PaymentModal() {
   const [price, setPrice] = useState(99);
   const [isPaying, setIsPaying] = useState(false);
@@ -60,16 +66,74 @@ export function PaymentModal() {
 
   const handlePayment = () => {
     setIsPaying(true);
-    setTimeout(() => {
-      window.location.href =
-        "https://drive.google.com/file/d/17yAepMItiG1JChoYNIvtMEejXEPA3IoB/view?usp=sharing";
-    }, 2000);
+
+    const options = {
+      key: "YOUR_RAZORPAY_KEY_ID", // IMPORTANT: Replace with your Razorpay Key ID
+      amount: price * 100, // Amount in paise
+      currency: "INR",
+      name: "PolitiTricks Exposed",
+      description: "Ebook by Sanath",
+      handler: function (response: any) {
+        toast({
+          title: "Payment Successful!",
+          description: "Redirecting you to the ebook...",
+        });
+        // Redirect to the ebook on successful payment
+        window.location.href =
+          "https://drive.google.com/file/d/17yAepMItiG1JChoYNIvtMEejXEPA3IoB/view?usp=sharing";
+      },
+      prefill: {
+        name: "",
+        email: "",
+        contact: "",
+      },
+      notes: {
+        address: "Digital Product",
+      },
+      theme: {
+        color: "#FF8C00", // Corresponds to your accent color
+      },
+      modal: {
+        ondismiss: function () {
+          setIsPaying(false);
+          toast({
+            variant: "destructive",
+            title: "Payment Cancelled",
+            description: "You can try again anytime.",
+          });
+        },
+      },
+    };
+
+    if (!window.Razorpay) {
+      toast({
+        variant: "destructive",
+        title: "Payment Gateway Error",
+        description:
+          "Razorpay script not loaded. Please check your connection and try again.",
+      });
+      setIsPaying(false);
+      return;
+    }
+
+    const rzp = new window.Razorpay(options);
+
+    rzp.on("payment.failed", function (response: any) {
+      setIsPaying(false);
+      toast({
+        variant: "destructive",
+        title: "Payment Failed",
+        description: response.error.description || "Please try again.",
+      });
+    });
+
+    rzp.open();
   };
 
   return (
     <Dialog
-      onOpenChange={() => {
-        if (!isPaying) {
+      onOpenChange={(isOpen) => {
+        if (!isOpen && !isPaying) {
           setPrice(99);
         }
       }}
@@ -112,7 +176,7 @@ export function PaymentModal() {
           overflow-x-hidden
         "
       >
-        <DialogHeader className="p-4 sm:p-6">
+        <DialogHeader className="p-4 sm:p-6 pb-0">
           <DialogTitle className="text-2xl sm:text-3xl font-headline text-primary text-center">
             Your Political Satire Fix
           </DialogTitle>
@@ -131,8 +195,6 @@ export function PaymentModal() {
               <p className="font-semibold text-secondary-foreground">
                 Want a massive discount?
               </p>
-
-              {/* ✅ FIXED MOBILE-SAFE BUTTON */}
               <Button
                 variant="outline"
                 onClick={handleShare}
