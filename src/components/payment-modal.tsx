@@ -104,7 +104,7 @@ export function PaymentModal() {
             <Button
               variant="outline"
               onClick={handleShare}
-              className="w-full border-accent text-accent hover:bg-accent hover:text-accent-foreground"
+              className="w-full border-accent text-accent hover:bg-accent hover:text-accent-foreground text-base font-semibold"
             >
               <Share2 className="mr-2" /> Share with 1 person to unlock ₹13
               price
@@ -115,7 +115,7 @@ export function PaymentModal() {
         <DialogFooter>
           <Button
             size="lg"
-            className="w-full bg-primary hover:bg-primary/90 text-lg"
+            className="w-full bg-primary hover:bg-primary/90 text-xl"
             onClick={handlePayment}
             disabled={isPaying}
           >
