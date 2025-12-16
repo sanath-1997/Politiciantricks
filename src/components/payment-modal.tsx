@@ -14,6 +14,7 @@ import { Button } from "@/components/ui/button";
 import { Share2, BookOpen, Loader2, ArrowRight } from "lucide-react";
 import { AnimatedPrice } from "./animated-price";
 import { useToast } from "@/hooks/use-toast";
+import { ScrollArea } from "./ui/scroll-area";
 
 export function PaymentModal() {
   const [price, setPrice] = useState(99);
@@ -83,8 +84,8 @@ export function PaymentModal() {
           <BookOpen className="mr-2" /> Get The Ebook Now
         </Button>
       </DialogTrigger>
-      <DialogContent className="sm:max-w-[480px] bg-card border-primary/50 shadow-2xl max-h-[90vh] overflow-y-auto">
-        <DialogHeader>
+      <DialogContent className="sm:max-w-[480px] bg-card border-primary/50 shadow-2xl grid-rows-[auto,minmax(0,1fr),auto] p-0 max-h-[90vh]">
+        <DialogHeader className="p-6">
           <DialogTitle className="text-3xl font-headline text-primary text-center">
             Your Political Satire Fix
           </DialogTitle>
@@ -92,27 +93,29 @@ export function PaymentModal() {
             Secure your copy of "PolitiTricks Exposed".
           </DialogDescription>
         </DialogHeader>
-        <div className="py-8 text-center">
-          <AnimatedPrice price={price} />
-        </div>
-
-        {price === 99 && (
-          <div className="p-4 mb-4 bg-secondary/50 rounded-lg text-center space-y-3">
-            <p className="font-semibold text-secondary-foreground">
-              Want a massive discount?
-            </p>
-            <Button
-              variant="outline"
-              onClick={handleShare}
-              className="w-full border-accent text-accent hover:bg-accent hover:text-accent-foreground text-base font-semibold"
-            >
-              <Share2 className="mr-2" /> Share with 1 person to unlock ₹13
-              price
-            </Button>
+        <ScrollArea className="px-6">
+          <div className="py-8 text-center">
+            <AnimatedPrice price={price} />
           </div>
-        )}
 
-        <DialogFooter>
+          {price === 99 && (
+            <div className="p-4 mb-4 bg-secondary/50 rounded-lg text-center space-y-3">
+              <p className="font-semibold text-secondary-foreground">
+                Want a massive discount?
+              </p>
+              <Button
+                variant="outline"
+                onClick={handleShare}
+                className="w-full border-accent text-accent hover:bg-accent hover:text-accent-foreground text-base font-semibold"
+              >
+                <Share2 className="mr-2" /> Share with 1 person to unlock ₹13
+                price
+              </Button>
+            </div>
+          )}
+        </ScrollArea>
+
+        <DialogFooter className="p-6 pt-0">
           <Button
             size="lg"
             className="w-full bg-primary hover:bg-primary/90 text-xl"
