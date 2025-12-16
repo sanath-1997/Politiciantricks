@@ -1,4 +1,11 @@
 import { PaymentModal } from "@/components/payment-modal";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 import Image from "next/image";
 
 export default function Home() {
@@ -15,9 +22,20 @@ export default function Home() {
       <main className="relative z-10 flex min-h-screen flex-col items-center justify-center p-4 sm:p-8 md:p-12">
         <div className="w-full max-w-4xl mx-auto text-center space-y-8">
           <header className="space-y-4">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-headline font-bold text-primary">
-              How to fool common people? - Political Edition
-            </h1>
+            <Dialog>
+              <DialogTrigger asChild>
+                <h1 className="text-4xl sm:text-5xl md:text-6xl font-headline font-bold text-primary cursor-pointer hover:scale-105 transition-transform duration-300">
+                  How to fool common people? - Political Edition
+                </h1>
+              </DialogTrigger>
+              <DialogContent className="sm:max-w-xl bg-card">
+                <DialogHeader>
+                  <DialogTitle className="text-2xl sm:text-3xl font-headline text-primary">
+                    How to fool common people? - Political Edition
+                  </DialogTitle>
+                </DialogHeader>
+              </DialogContent>
+            </Dialog>
             <div className="flex items-center justify-center space-x-2">
               <span role="img" aria-label="theater masks" className="text-2xl">
                 🎭
