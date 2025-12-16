@@ -11,7 +11,7 @@ export default function Home() {
         className="object-cover"
         data-ai-hint="political speech"
       />
-      <div className="absolute inset-0 bg-background/60 backdrop-blur-sm" />
+      <div className="absolute inset-0 bg-background/50 backdrop-blur-sm" />
       <main className="relative z-10 flex min-h-screen flex-col items-center justify-center p-4 sm:p-8 md:p-12">
         <div className="w-full max-w-4xl mx-auto text-center space-y-8">
           <header className="space-y-4">
