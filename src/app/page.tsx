@@ -5,11 +5,11 @@ export default function Home() {
   return (
     <div className="relative min-h-screen w-full">
       <Image
-        src="https://picsum.photos/seed/capitol/1920/1080"
+        src="https://images.pexels.com/photos/25482782/pexels-photo-25482782.jpeg"
         alt="Political background"
         fill
         className="object-cover"
-        data-ai-hint="capitol building"
+        data-ai-hint="political speech"
       />
       <div className="absolute inset-0 bg-background/80 backdrop-blur-sm" />
       <main className="relative z-10 flex min-h-screen flex-col items-center justify-center p-4 sm:p-8 md:p-12">
