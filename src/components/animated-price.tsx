@@ -26,7 +26,7 @@ export function AnimatedPrice({ price }: AnimatedPriceProps) {
       <div className="relative h-20 flex items-center">
         {/* Strikethrough price, always present but hidden/shown with opacity */}
         <span
-          className={`absolute left-1/2 -translate-x-1/2 text-3xl font-bold text-muted-foreground line-through decoration-2 decoration-destructive/70 transition-all duration-300 ease-out ${
+          className={`absolute left-1/2 -translate-x-1/2 text-2xl sm:text-3xl font-bold text-muted-foreground line-through decoration-2 decoration-destructive/70 transition-all duration-300 ease-out ${
             isDiscounted ? "opacity-70 -translate-y-6" : "opacity-0"
           }`}
         >
@@ -37,8 +37,8 @@ export function AnimatedPrice({ price }: AnimatedPriceProps) {
         <span
           className={`font-headline font-extrabold transition-all duration-300 ease-in-out ${
             isDiscounted
-              ? "text-7xl text-accent"
-              : "text-5xl text-muted-foreground"
+              ? "text-6xl sm:text-7xl text-accent"
+              : "text-4xl sm:text-5xl text-muted-foreground"
           }`}
         >
           ₹{isDiscounted ? 13 : 99}

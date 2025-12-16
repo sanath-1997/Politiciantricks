@@ -85,15 +85,15 @@ export function PaymentModal() {
         </Button>
       </DialogTrigger>
       <DialogContent className="sm:max-w-[480px] bg-card border-primary/50 shadow-2xl grid-rows-[auto,minmax(0,1fr),auto] p-0 max-h-[90vh]">
-        <DialogHeader className="p-6">
-          <DialogTitle className="text-3xl font-headline text-primary text-center">
+        <DialogHeader className="p-4 sm:p-6">
+          <DialogTitle className="text-2xl sm:text-3xl font-headline text-primary text-center">
             Your Political Satire Fix
           </DialogTitle>
-          <DialogDescription className="text-center text-lg pt-2">
+          <DialogDescription className="text-center text-md sm:text-lg pt-2">
             Secure your copy of "PolitiTricks Exposed".
           </DialogDescription>
         </DialogHeader>
-        <ScrollArea className="px-6">
+        <ScrollArea className="px-4 sm:px-6">
           <div className="py-8 text-center">
             <AnimatedPrice price={price} />
           </div>
@@ -115,7 +115,7 @@ export function PaymentModal() {
           )}
         </ScrollArea>
 
-        <DialogFooter className="p-6 pt-0">
+        <DialogFooter className="p-4 sm:p-6 pt-0">
           <Button
             size="lg"
             className="w-full bg-primary hover:bg-primary/90 text-xl"
