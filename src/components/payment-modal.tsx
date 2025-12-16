@@ -83,7 +83,7 @@ export function PaymentModal() {
           <BookOpen className="mr-2" /> Get The Ebook Now
         </Button>
       </DialogTrigger>
-      <DialogContent className="sm:max-w-[480px] bg-card border-primary/50 shadow-2xl">
+      <DialogContent className="sm:max-w-[480px] bg-card border-primary/50 shadow-2xl max-h-[90vh] overflow-y-auto">
         <DialogHeader>
           <DialogTitle className="text-3xl font-headline text-primary text-center">
             Your Political Satire Fix
