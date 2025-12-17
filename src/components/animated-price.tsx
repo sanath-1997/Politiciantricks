@@ -8,41 +8,63 @@ interface AnimatedPriceProps {
 
 export function AnimatedPrice({ price }: AnimatedPriceProps) {
   const [isDiscounted, setIsDiscounted] = useState(false);
+  const [showInitialPrice, setShowInitialPrice] = useState(true);
 
   useEffect(() => {
     if (price === 13) {
-      // We use a timeout to let the dialog open before animating
       const timer = setTimeout(() => {
         setIsDiscounted(true);
       }, 100);
       return () => clearTimeout(timer);
     } else {
+      // Reset state when dialog closes
       setIsDiscounted(false);
     }
   }, [price]);
 
+  useEffect(() => {
+    if (isDiscounted) {
+      // Hide the initial large price after the transition to avoid overlap
+      const timer = setTimeout(() => {
+        setShowInitialPrice(false);
+      }, 500); // Should match transition duration
+      return () => clearTimeout(timer);
+    } else {
+      setShowInitialPrice(true);
+    }
+  }, [isDiscounted]);
+
   return (
     <div className="flex flex-col items-center justify-center h-24">
-      <div className="relative h-20 flex items-center">
-        {/* Strikethrough price, always present but hidden/shown with opacity */}
-        <span
-          className={`absolute left-1/2 -translate-x-1/2 text-2xl sm:text-3xl font-bold text-muted-foreground/60 line-through decoration-2 decoration-destructive/70 transition-all duration-300 ease-out ${
-            isDiscounted ? "opacity-70 -translate-y-6" : "opacity-0"
-          }`}
-        >
-          ₹99
-        </span>
+      <div className="relative h-20 flex items-center justify-center w-48">
+        {/* Initial Price State (99) */}
+        {showInitialPrice && (
+          <span
+            className={`font-headline font-extrabold text-foreground transition-all duration-500 ease-in-out ${
+              isDiscounted
+                ? "opacity-0 scale-50"
+                : "text-4xl sm:text-5xl opacity-100 scale-100"
+            }`}
+          >
+            ₹99
+          </span>
+        )}
 
-        {/* Main price */}
-        <span
-          className={`font-headline font-extrabold transition-all duration-300 ease-in-out ${
+        {/* Discounted Price State (99 crossed out + 13) */}
+        <div
+          className={`absolute flex items-end justify-center gap-x-2 sm:gap-x-3 transition-all duration-500 ease-in-out ${
             isDiscounted
-              ? "text-6xl sm:text-7xl text-destructive"
-              : "text-4xl sm:text-5xl text-foreground"
+              ? "opacity-100 scale-100"
+              : "opacity-0 scale-125 pointer-events-none"
           }`}
         >
-          ₹{isDiscounted ? 13 : 99}
-        </span>
+          <span className="text-2xl sm:text-3xl font-bold text-muted-foreground/80 line-through decoration-2 decoration-destructive/70">
+            ₹99
+          </span>
+          <span className="font-headline font-extrabold text-6xl sm:text-7xl text-destructive">
+            ₹13
+          </span>
+        </div>
       </div>
       <p
         className={`mt-2 text-sm font-medium transition-colors duration-500 ${
