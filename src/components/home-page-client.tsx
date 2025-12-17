@@ -33,13 +33,13 @@ export function HomePageClient() {
       />
       <main className="flex min-h-screen flex-col items-center justify-center p-4 sm:p-8 md:p-12 relative z-10">
         <div className="w-full max-w-4xl mx-auto text-center space-y-8">
-          <header className="py-6 px-4 bg-card/10 backdrop-blur-sm rounded-xl">
+          <header className="py-6 px-4">
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white tracking-tight">
               How to fool common people? - Political Edition
             </h1>
           </header>
 
-          <section className="bg-card/10 backdrop-blur-sm rounded-xl p-6 sm:p-8 text-left text-white/90">
+          <section className="p-6 sm:p-8 text-left text-white/90">
             <h2 className="text-2xl sm:text-3xl font-bold mb-4 text-primary flex items-center gap-3">
               <BookOpen />
               What this ebook is about ?
