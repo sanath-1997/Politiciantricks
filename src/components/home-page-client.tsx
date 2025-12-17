@@ -33,12 +33,6 @@ export function HomePageClient() {
       />
       <main className="flex min-h-screen flex-col items-center justify-center p-4 sm:p-8 md:p-12 relative z-10">
         <div className="w-full max-w-4xl mx-auto text-center space-y-8">
-          <header className="py-6 px-4">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white tracking-tight">
-              How to fool common people? - Political Edition
-            </h1>
-          </header>
-
           <section className="p-6 sm:p-8 text-left text-white/90">
             <h2 className="text-2xl sm:text-3xl font-bold mb-4 text-primary flex items-center gap-3">
               <BookOpen />
@@ -65,7 +59,7 @@ export function HomePageClient() {
           </section>
         </div>
 
-        <footer className="w-full text-center mt-12 bg-black/50 backdrop-blur-sm py-6">
+        <footer className="w-full text-center mt-12 bg-black/70 backdrop-blur-sm py-6">
           <div className="max-w-4xl mx-auto flex flex-wrap justify-center items-center gap-x-4 sm:gap-x-6 gap-y-2">
             <FooterLink title="About the Author">
               <p>
