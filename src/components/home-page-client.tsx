@@ -34,10 +34,6 @@ export function HomePageClient() {
       <main className="flex min-h-screen flex-col items-center justify-center p-4 sm:p-8 md:p-12 relative z-10">
         <div className="w-full max-w-4xl mx-auto text-center space-y-8">
           <section className="p-6 sm:p-8 text-left text-white/90">
-            <h2 className="text-2xl sm:text-3xl font-bold mb-4 text-primary flex items-center gap-3">
-              <BookOpen />
-              How Politicians Fool Common People
-            </h2>
             <div className="space-y-3 text-base sm:text-lg">
               <p>
                 How Politicians Fool Common People explains, how politicians use
