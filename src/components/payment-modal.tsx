@@ -153,23 +153,22 @@ export function PaymentModal() {
                 onClick={handleShare}
                 className="
                   w-full
-                  max-w-full
+                  min-h-[56px]          /* 👈 ensures good touch target */
                   px-6
-                  py-4
-                  text-sm
-                  sm:text-base
-                  leading-snug
-                  whitespace-normal
-                  break-words
-                  flex
-                  items-center
-                  justify-center
-                  gap-2
-                  text-center
-                  border-accent
-                  text-accent
-                  hover:bg-accent
-                  hover:text-accent-foreground
+                    py-5                 /* 👈 increase vertical padding */
+                    text-sm
+                    sm:text-base
+                    leading-relaxed      /* 👈 fixes cramped text */
+                    whitespace-normal
+                    break-words
+                    flex
+                    items-center
+                    justify-center
+                    gap-3
+                    border-accent
+                    text-accent
+                    hover:bg-accent
+                    hover:text-accent-foreground
                 "
               >
                 <Share2 className="shrink-0" />
