@@ -23,8 +23,7 @@ export function HomePageClient() {
       <div
         className="absolute inset-0 w-full h-full"
         style={{
-          backgroundImage:
-            "url('https://images.pexels.com/photos/2802403/pexels-photo-2802403.jpeg?_gl=1*1frpfny*_ga*MTQ5MDU0MjM0MC4xNzYzOTU2Njg1*_ga_8JE65Q40S6*czE3NjU5NjA2NTgkbzEyJGcxJHQxNzY1OTYwNjY3JGo1MSRsMCRoMA..')",
+          backgroundImage: "url('/politics_background_image.png')",
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
@@ -79,7 +78,7 @@ export function HomePageClient() {
           </section>
         </div>
 
-        <footer className="w-full text-center mt-12 text-white bg-black/30 py-6">
+        <footer className="w-full text-center mt-12 bg-black/30 py-6">
           <div className="max-w-4xl mx-auto flex flex-wrap justify-center items-center gap-x-4 sm:gap-x-6 gap-y-2">
             <FooterLink title="About the Author">
               <p>
