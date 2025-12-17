@@ -59,9 +59,9 @@ export function HomePageClient() {
             </h2>
             <p className="font-body text-base sm:text-lg leading-relaxed">
               This book is simply about all the nonsense politicians do to grab
-              power and cling to it like a lifetime freebie scheme. From
-              dramatic speeches to magical promises that expire right after
-              elections, every trick is exposed with satire.
+              power and cling to it like a lifetime freebie scheme 🤔. From
+              dramatic speeches 🎤 to magical promises that expire right after
+              elections 🪄, every trick is exposed with satire 😂.
             </p>
             <p className="font-body text-base text-muted-foreground italic pt-2">
               <strong>Note:</strong> After payment, you can access the PDF file
