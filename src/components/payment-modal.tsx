@@ -24,7 +24,7 @@ export function PaymentModal() {
   const handleShare = async () => {
     const shareData = {
       title: "PolitiTricks Exposed: How to fool common people?",
-      text: "Check out this satirical take on modern politics!",
+      text: "Hey! 😄📘 I just found an ebook titled “Tricks Politicians Fool Common People?” 🎭🗳️\nIt’s super funny, witty, and painfully relatable 😂🤯\nDefinitely check it out—you’ll laugh and think at the same time! 😉🔥",
       url: window.location.href,
     };
 
