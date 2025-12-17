@@ -24,7 +24,7 @@ export function HomePageClient() {
         className="absolute inset-0 w-full h-full"
         style={{
           backgroundImage:
-            "url('https://media.istockphoto.com/id/1355106725/photo/indian-politician-greeting-by-doing-namaste-concept-of-welcome-gesture-showing-on-yellow.jpg?s=612x612&w=0&k=20&c=1SqJxKXfbl0hKZtC1KgZ35Nwzq7PUuAMS2CYtQJmnGU=')",
+            "url('https://images.pexels.com/photos/2802403/pexels-photo-2802403.jpeg?_gl=1*1frpfny*_ga*MTQ5MDU0MjM0MC4xNzYzOTU2Njg1*_ga_8JE65Q40S6*czE3NjU5NjA2NTgkbzEyJGcxJHQxNzY1OTYwNjY3JGo1MSRsMCRoMA..')",
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
