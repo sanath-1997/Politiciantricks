@@ -19,17 +19,21 @@ export function HomePageClient() {
   }, []);
 
   return (
-    <div
-      className="min-h-screen w-full"
-      style={{
-        backgroundImage:
-          "url('https://media.istockphoto.com/id/1355106725/photo/indian-politician-greeting-by-doing-namaste-concept-of-welcome-gesture-showing-on-yellow.jpg?s=612x612&w=0&k=20&c=1SqJxKXfbl0hKZtC1KgZ35Nwzq7PUuAMS2CYtQJmnGU=')",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-      }}
-    >
-      <main className="flex min-h-screen flex-col items-center justify-center p-4 sm:p-8 md:p-12">
+    <div className="min-h-screen w-full relative">
+      <div
+        className="absolute inset-0 w-full h-full"
+        style={{
+          backgroundImage:
+            "url('https://media.istockphoto.com/id/1355106725/photo/indian-politician-greeting-by-doing-namaste-concept-of-welcome-gesture-showing-on-yellow.jpg?s=612x612&w=0&k=20&c=1SqJxKXfbl0hKZtC1KgZ35Nwzq7PUuAMS2CYtQJmnGU=')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+          filter: 'blur(2px)',
+          opacity: 0.3,
+          zIndex: -1,
+        }}
+      />
+      <main className="flex min-h-screen flex-col items-center justify-center p-4 sm:p-8 md:p-12 relative z-10">
         <div className="w-full max-w-4xl mx-auto text-center space-y-8">
           <header className="bg-card/90 p-6 sm:p-8 rounded-lg shadow-lg border-border/50 space-y-4">
             <Dialog>
