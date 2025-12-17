@@ -84,7 +84,10 @@ export function PaymentModal() {
     <Dialog
       onOpenChange={(isOpen) => {
         if (!isOpen && !isPaying) {
-          setPrice(99);
+          // Reset price to 99 only when the dialog is closed and not during payment redirection
+          setTimeout(() => {
+            setPrice(99);
+          }, 300); // Delay to allow animations to finish
         }
       }}
     >
