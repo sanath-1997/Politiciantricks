@@ -27,6 +27,14 @@ export function HomePageClient() {
             <h1 className="text-3xl sm:text-4xl font-extrabold text-primary font-headline">
               How to fool common people? - Political Edition
             </h1>
+            <div className="relative w-full h-64 sm:h-80 md:h-96 my-6 rounded-lg overflow-hidden">
+              <Image
+                src="/politics_background_image.png"
+                alt="Political Abstract Art"
+                fill
+                className="object-contain"
+              />
+            </div>
             <h2 className="text-xl sm:text-2xl font-semibold text-foreground mt-4 mb-6">
               What this ebook is about?
             </h2>
@@ -41,14 +49,6 @@ export function HomePageClient() {
             <div className="mt-8">
               <PaymentModal />
             </div>
-          </div>
-          <div className="relative w-full h-64 sm:h-80 md:h-96">
-            <Image
-              src="/politics_background_image.png"
-              alt="Political Abstract Art"
-              fill
-              className="object-cover"
-            />
           </div>
         </div>
       </main>
