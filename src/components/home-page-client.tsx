@@ -33,21 +33,6 @@ export function HomePageClient() {
       />
       <main className="flex min-h-screen flex-col items-center justify-center p-4 sm:p-8 md:p-12 relative z-10">
         <div className="w-full max-w-4xl mx-auto text-center space-y-8">
-          <section className="p-6 sm:p-8 text-left text-white/90">
-            <div className="space-y-3 text-base sm:text-lg">
-              <p>
-                How Politicians Fool Common People explains, how politicians use
-                big promises, emotional speeches, and clever words to gain power
-                🗳️🎭.
-              </p>
-              <p>
-                It shows how the same tricks are repeated again and again, while
-                common people keep hoping for change 🔄🤞. This book helps
-                readers think clearly, ask questions, and understand politics
-                beyond speeches and slogans 🧠📢.
-              </p>
-            </div>
-          </section>
           <section className="w-full max-w-md mx-auto pt-4">
             <PaymentModal />
           </section>
