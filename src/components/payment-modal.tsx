@@ -98,9 +98,9 @@ export function PaymentModal() {
             w-full
             text-lg
             font-bold
-            bg-accent
-            hover:bg-accent/90
-            text-accent-foreground
+            bg-primary
+            hover:bg-primary/90
+            text-primary-foreground
             shadow-lg
             transform
             hover:scale-105
@@ -204,7 +204,7 @@ export function PaymentModal() {
               </>
             ) : (
               <>
-                Pay ₹{price} and Get Access
+                Pay ₹{price} and Download
                 <ArrowRight />
               </>
             )}
