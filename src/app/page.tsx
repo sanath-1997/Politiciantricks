@@ -48,7 +48,7 @@ export default function Home() {
               dramatic speeches to magical promises that expire right after
               elections, every trick is exposed with satire.
             </p>
-            <p className="font-body text-sm text-muted-foreground italic pt-2">
+            <p className="font-body text-base text-muted-foreground italic pt-2">
               <strong>Note:</strong> After payment, you can access the PDF file
               in your Google Drive.
             </p>
