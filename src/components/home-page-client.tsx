@@ -79,7 +79,7 @@ export function HomePageClient() {
           </section>
         </div>
 
-        <footer className="w-full text-center mt-12 text-black">
+        <footer className="w-full text-center mt-12 text-white bg-black/30 py-6">
           <div className="max-w-4xl mx-auto flex flex-wrap justify-center items-center gap-x-4 sm:gap-x-6 gap-y-2">
             <FooterLink title="About the Author">
               <p>
@@ -181,7 +181,7 @@ export function HomePageClient() {
               </p>
             </FooterLink>
           </div>
-          <p className="text-sm mt-6 text-black/80">
+          <p className="text-sm mt-6 text-white/80">
             © {isClient ? new Date().getFullYear() : "2024"} PolitiTricks
             Exposed. All Rights Reserved.
           </p>
@@ -200,7 +200,7 @@ const FooterLink = ({
 }) => (
   <Dialog>
     <DialogTrigger asChild>
-      <button className="text-sm text-black hover:text-primary hover:underline focus:outline-none">
+      <button className="text-sm text-white hover:text-primary hover:underline focus:outline-none">
         {title}
       </button>
     </DialogTrigger>
