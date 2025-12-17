@@ -32,7 +32,7 @@ export function HomePageClient() {
       />
       <main className="flex min-h-screen flex-col items-center justify-center p-4 sm:p-8 md:p-12 relative z-10">
         <div className="w-full max-w-4xl mx-auto text-center space-y-8">
-          <header className="bg-card/90 p-6 sm:p-8 rounded-lg shadow-lg border-border/50 space-y-4">
+          <header className="bg-card p-6 sm:p-8 rounded-lg shadow-lg border-border/50 space-y-4">
             <Dialog>
               <DialogTrigger asChild>
                 <h1 className="text-4xl sm:text-5xl md:text-6xl font-headline font-bold text-card-foreground cursor-pointer hover:scale-105 transition-transform duration-300">
@@ -57,7 +57,7 @@ export function HomePageClient() {
             </div>
           </header>
 
-          <section className="bg-card/90 p-6 sm:p-8 rounded-lg shadow-lg border-border/50 max-w-2xl mx-auto text-left space-y-4">
+          <section className="bg-card p-6 sm:p-8 rounded-lg shadow-lg border-border/50 max-w-2xl mx-auto text-left space-y-4">
             <h2 className="text-2xl sm:text-3xl font-headline font-semibold text-primary">
               What this ebook is about ?
             </h2>
