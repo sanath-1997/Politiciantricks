@@ -28,8 +28,6 @@ export function HomePageClient() {
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
-          filter: 'blur(2px)',
-          opacity: 0.3,
           zIndex: -1,
         }}
       />
