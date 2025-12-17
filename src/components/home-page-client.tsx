@@ -25,7 +25,7 @@ export function HomePageClient() {
         className="absolute inset-0 w-full h-full"
         style={{
           backgroundImage: "url('/politics_background_image.png')",
-          backgroundSize: "cover",
+          backgroundSize: "contain",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
           zIndex: -1,
