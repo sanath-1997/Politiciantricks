@@ -16,12 +16,6 @@ import { AnimatedPrice } from "./animated-price";
 import { useToast } from "@/hooks/use-toast";
 import { ScrollArea } from "./ui/scroll-area";
 
-declare global {
-  interface Window {
-    Razorpay: any;
-  }
-}
-
 export function PaymentModal() {
   const [price, setPrice] = useState(99);
   const [isPaying, setIsPaying] = useState(false);
@@ -66,68 +60,24 @@ export function PaymentModal() {
 
   const handlePayment = () => {
     setIsPaying(true);
+    let paymentLink = "";
 
-    const options = {
-      key: "YOUR_RAZORPAY_KEY_ID", // IMPORTANT: Replace with your Razorpay Key ID
-      amount: price * 100, // Amount in paise
-      currency: "INR",
-      name: "PolitiTricks Exposed",
-      description: "Ebook by Sanath",
-      handler: function (response: any) {
-        toast({
-          title: "Payment Successful!",
-          description: "Redirecting you to the ebook...",
-        });
-        // Redirect to the ebook on successful payment
-        window.location.href =
-          "https://drive.google.com/file/d/17yAepMItiG1JChoYNIvtMEejXEPA3IoB/view?usp=sharing";
-      },
-      prefill: {
-        name: "",
-        email: "",
-        contact: "",
-      },
-      notes: {
-        address: "Digital Product",
-      },
-      theme: {
-        color: "#FF8C00", // Corresponds to your accent color
-      },
-      modal: {
-        ondismiss: function () {
-          setIsPaying(false);
-          toast({
-            variant: "destructive",
-            title: "Payment Cancelled",
-            description: "You can try again anytime.",
-          });
-        },
-      },
-    };
-
-    if (!window.Razorpay) {
-      toast({
-        variant: "destructive",
-        title: "Payment Gateway Error",
-        description:
-          "Razorpay script not loaded. Please check your connection and try again.",
-      });
-      setIsPaying(false);
-      return;
+    if (price === 99) {
+      paymentLink = "https://rzp.io/rzp/RAo0xzRm";
+    } else if (price === 13) {
+      paymentLink = "https://rzp.io/rzp/T0n1dNNc";
     }
 
-    const rzp = new window.Razorpay(options);
-
-    rzp.on("payment.failed", function (response: any) {
-      setIsPaying(false);
+    if (paymentLink) {
+      window.location.href = paymentLink;
+    } else {
       toast({
         variant: "destructive",
-        title: "Payment Failed",
-        description: response.error.description || "Please try again.",
+        title: "Error",
+        description: "Could not determine payment link.",
       });
-    });
-
-    rzp.open();
+      setIsPaying(false);
+    }
   };
 
   return (
@@ -247,7 +197,7 @@ export function PaymentModal() {
             {isPaying ? (
               <>
                 <Loader2 className="h-5 w-5 animate-spin" />
-                Processing Payment...
+                Processing...
               </>
             ) : (
               <>
