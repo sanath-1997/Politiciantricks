@@ -39,12 +39,13 @@ export function HomePageClient() {
               What this ebook is about?
             </h2>
             <p className="text-base sm:text-lg text-card-foreground/90 leading-relaxed text-left">
-              How Politicians Fool Common People explains, how politicians use
-              big promises, emotional speeches, and clever words to gain power
-              🗳️🎭. It shows how the same tricks are repeated again and again,
-              while common people keep hoping for change 🔄🤞. This book helps
-              readers think clearly, ask questions, and understand politics
-              beyond speeches and slogans 🧠📢.
+              <span className="text-destructive font-semibold">
+                How Politicians Fool Common People
+              </span>{" "}
+              explains, how politicians use big promises, emotional speeches,
+              and clever words to gain power 🗳️🎭. It shows how the same tricks
+              are repeated again and again, while common people keep hoping for
+              change 🔄🤞.
             </p>
             <div className="mt-8">
               <PaymentModal />
