@@ -24,7 +24,7 @@ export function HomePageClient() {
         className="absolute inset-0 w-full h-full"
         style={{
           backgroundImage:
-            "url('https://lh3.googleusercontent.com/gg-dl/ABS2GSkRG9B2qvCN6CbPIj2Ivqh4iOklWN8MXa4g-n34s-OHI6R0KIJZ2GchjaNTE5QgLHfxM_XxStuUxVmAbuyupIEhk0Q5SxNiqOzB40deQREkL-XFphutU8BkPatL7ovcCSurcLlcbjqUIGU_83YH2kKNwPv58KbwSrodihgrB-PTGyi85Q=s1024-rj')",
+            "url('https://images.pexels.com/photos/2802403/pexels-photo-2802403.jpeg?_gl=1*1frpfny*_ga*MTQ5MDU0MjM0MC4xNzYzOTU2Njg1*_ga_8JE65Q40S6*czE3NjU5NjA2NTgkbzEyJGcxJHQxNzY1OTYwNjY3JGo1MSRsMCRoMA..')",
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
