@@ -28,16 +28,16 @@ export function HomePageClient() {
     >
       <main className="flex min-h-screen flex-col items-center justify-center p-4 sm:p-8 md:p-12 bg-black/50">
         <div className="w-full max-w-4xl mx-auto text-center space-y-8">
-          <header className="space-y-4">
+          <header className="bg-card/90 p-6 sm:p-8 rounded-lg shadow-lg border-border/50 space-y-4">
             <Dialog>
               <DialogTrigger asChild>
-                <h1 className="text-4xl sm:text-5xl md:text-6xl font-headline font-bold text-white cursor-pointer hover:scale-105 transition-transform duration-300">
+                <h1 className="text-4xl sm:text-5xl md:text-6xl font-headline font-bold text-card-foreground cursor-pointer hover:scale-105 transition-transform duration-300">
                   How to fool common people? - Political Edition
                 </h1>
               </DialogTrigger>
               <DialogContent className="sm:max-w-xl bg-card">
                 <DialogHeader>
-                  <DialogTitle className="text-2xl sm:text-3xl font-headline text-accent">
+                  <DialogTitle className="text-2xl sm:text-3xl font-headline text-primary">
                     How to fool common people? - Political Edition
                   </DialogTitle>
                 </DialogHeader>
@@ -47,7 +47,7 @@ export function HomePageClient() {
               <span role="img" aria-label="theater masks" className="text-2xl">
                 🎭
               </span>
-              <p className="text-lg sm:text-xl md:text-2xl text-white font-body">
+              <p className="text-lg sm:text-xl md:text-2xl text-muted-foreground font-body">
                 PolitiTricks Exposed
               </p>
             </div>
