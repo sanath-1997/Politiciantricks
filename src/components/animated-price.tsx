@@ -27,7 +27,7 @@ export function AnimatedPrice({ price }: AnimatedPriceProps) {
       // Hide the initial large price after the transition to avoid overlap
       const timer = setTimeout(() => {
         setShowInitialPrice(false);
-      }, 500); // Should match transition duration
+      }, 1000); // Should match transition duration
       return () => clearTimeout(timer);
     } else {
       setShowInitialPrice(true);
@@ -40,7 +40,7 @@ export function AnimatedPrice({ price }: AnimatedPriceProps) {
         {/* Initial Price State (99) */}
         {showInitialPrice && (
           <span
-            className={`font-headline font-extrabold text-foreground transition-all duration-500 ease-in-out ${
+            className={`font-headline font-extrabold text-foreground transition-all duration-1000 ease-in-out ${
               isDiscounted
                 ? "opacity-0 scale-50"
                 : "text-4xl sm:text-5xl opacity-100 scale-100"
@@ -52,7 +52,7 @@ export function AnimatedPrice({ price }: AnimatedPriceProps) {
 
         {/* Discounted Price State (99 crossed out + 13) */}
         <div
-          className={`absolute flex items-end justify-center gap-x-2 sm:gap-x-3 transition-all duration-500 ease-in-out ${
+          className={`absolute flex items-end justify-center gap-x-2 sm:gap-x-3 transition-all duration-1000 ease-in-out ${
             isDiscounted
               ? "opacity-100 scale-100"
               : "opacity-0 scale-125 pointer-events-none"
@@ -67,7 +67,7 @@ export function AnimatedPrice({ price }: AnimatedPriceProps) {
         </div>
       </div>
       <p
-        className={`mt-2 text-sm font-medium transition-colors duration-500 ${
+        className={`mt-2 text-sm font-medium transition-colors duration-1000 ${
           isDiscounted ? "text-destructive" : "text-muted-foreground"
         }`}
       >
