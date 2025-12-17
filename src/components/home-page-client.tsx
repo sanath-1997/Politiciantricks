@@ -36,21 +36,19 @@ export function HomePageClient() {
           <section className="p-6 sm:p-8 text-left text-white/90">
             <h2 className="text-2xl sm:text-3xl font-bold mb-4 text-primary flex items-center gap-3">
               <BookOpen />
-              What this ebook is about ?
+              How Politicians Fool Common People
             </h2>
             <div className="space-y-3 text-base sm:text-lg">
               <p>
-                Ever wondered how politicians seem to cast a spell on the masses?
-                This ebook is your backstage pass to the world of political
-                maneuvers. It humorously breaks down the time-tested tricks and
-                tactics used to sway public opinion, win votes, and stay in
-                power. From emotional appeals to clever rhetoric, you'll learn
-                to spot the strategies from a mile away.
+                How Politicians Fool Common People explains, how politicians use
+                big promises, emotional speeches, and clever words to gain power
+                🗳️🎭.
               </p>
               <p>
-                It is a fun, witty, and eye-opening read that will change the
-                way you see politics forever. Get ready to laugh, learn, and
-                never be fooled again!
+                It shows how the same tricks are repeated again and again, while
+                common people keep hoping for change 🔄🤞. This book helps
+                readers think clearly, ask questions, and understand politics
+                beyond speeches and slogans 🧠📢.
               </p>
             </div>
           </section>
