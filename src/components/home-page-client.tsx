@@ -22,8 +22,11 @@ export function HomePageClient() {
     <div
       className="min-h-screen w-full"
       style={{
-        background:
-          "linear-gradient(to right, #FF9933 33.3%, #FFFFFF 33.3%, #FFFFFF 66.6%, #138808 66.6%)",
+        backgroundImage:
+          "url('https://media.istockphoto.com/id/1355106725/photo/indian-politician-greeting-by-doing-namaste-concept-of-welcome-gesture-showing-on-yellow.jpg?s=612x612&w=0&k=20&c=1SqJxKXfbl0hKZtC1KgZ35Nwzq7PUuAMS2CYtQJmnGU=')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
       }}
     >
       <main className="flex min-h-screen flex-col items-center justify-center p-4 sm:p-8 md:p-12">
